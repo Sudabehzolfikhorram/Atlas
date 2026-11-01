@@ -1,0 +1,11 @@
+import type { AuditEntry } from "../types/intel";
+
+export const auditSeed: AuditEntry[] = [
+{ id: "AUD-1042", timestamp: "2026-10-12T08:41:00", actor: "Atlas AI Agent", role: "System", category: "Investigation", action: "Completed analysis", target: "Procure-to-Pay approval workflow", detail: "41,208 ERP records and 1,930 email threads analysed. 3 bottlenecks flagged." },
+{ id: "AUD-1041", timestamp: "2026-10-12T08:12:00", actor: "Priya Raman", role: "Enterprise Data Lead", category: "Governance", action: "Updated data owner", target: "Vendor Master (ERP)", detail: "Owner set to Procurement Data Steward." },
+{ id: "AUD-1040", timestamp: "2026-10-11T17:30:00", actor: "Marcus Okafor", role: "Maintenance Operations Lead", category: "Graph edit", action: "Proposed relation", target: "Planner Review → Auto-release (low-risk WOs)", detail: "Kept in proposed layer; awaiting Operations Director approval." },
+{ id: "AUD-1039", timestamp: "2026-10-11T15:04:00", actor: "Sofia Lindqvist", role: "Data Governance Officer", category: "Access", action: "Restricted access", target: "Microsoft Teams — Field Ops channels", detail: "Message bodies masked; metadata only for process mining." },
+{ id: "AUD-1038", timestamp: "2026-10-11T11:20:00", actor: "Thomas Reid", role: "Operations Director", category: "Approval", action: "Approved pilot scope", target: "North Basin maintenance fast-track pilot", detail: "Pilot limited to 2 assets for 6 weeks." },
+{ id: "AUD-1037", timestamp: "2026-10-10T09:48:00", actor: "Atlas AI Agent", role: "System", category: "Recommendation", action: "Issued recommendation", target: "Raise Tier-2 approval threshold to $25k (catalog items)", detail: "Confidence 86%. Based on best-practice benchmark set BP-P2P-07." },
+{ id: "AUD-1036", timestamp: "2026-10-09T14:15:00", actor: "Layla Haddad", role: "Procurement Manager", category: "Task", action: "Started task", target: "Review procurement approval thresholds" },
+{ id: "AUD-1035", timestamp: "2026-10-08T10:02:00", actor: "Dana Whitfield", role: "VP, Operational Excellence", category: "Investigation", action: "Opened investigation", target: "Asset Register completeness gap" }];

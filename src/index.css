@@ -1,0 +1,621 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+/* ───────────────────────── Theme tokens ─────────────────────────
+   Dark values are the original design. Light values adapt the same glass system. */
+:root {
+  --c-body-bg: #070b14;
+  --c-body-text: #e2e8f0;
+  --c-field-bg: rgba(255, 255, 255, 0.04);
+  --c-field-bg-hover: rgba(255, 255, 255, 0.06);
+  --c-field-bg-focus: rgba(255, 255, 255, 0.05);
+  --c-field-border: rgba(255, 255, 255, 0.08);
+  --c-field-text: #e2e8f0;
+  --c-placeholder: #64748b;
+  --c-approve-bg: #2dd4bf;
+  --c-approve-hover: #5eead4;
+  --c-approve-text: #042f2b;
+  --c-glass-btn-bg: rgba(255, 255, 255, 0.06);
+  --c-glass-btn-hover: rgba(255, 255, 255, 0.1);
+  --c-glass-btn-border: rgba(255, 255, 255, 0.12);
+  --c-glass-btn-text: #e2e8f0;
+  --c-glass-btn-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --c-outline-text: #e2e8f0;
+  --c-outline-border: rgba(255, 255, 255, 0.2);
+  --c-outline-border-hover: rgba(255, 255, 255, 0.32);
+  --c-outline-hover-bg: rgba(255, 255, 255, 0.06);
+  --c-suggest-bg: rgba(255, 255, 255, 0.03);
+  --c-suggest-text: #cbd5e1;
+  --c-suggest-border: rgba(255, 255, 255, 0.14);
+  --c-suggest-hover-text: #ffffff;
+  --c-pill-bg: #ffffff;
+  --c-pill-text: #0b1220;
+  --c-pill-hover: #e2e8f0;
+  --c-ghost-text: #94a3b8;
+  --c-ghost-hover-bg: rgba(255, 255, 255, 0.06);
+  --c-ghost-hover-text: #ffffff;
+  --c-ghost-active-bg: rgba(255, 255, 255, 0.08);
+  --c-menu-bg: rgba(14, 21, 38, 0.72);
+  --c-menu-border: rgba(255, 255, 255, 0.12);
+  --c-menu-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  --c-menu-item-text: #cbd5e1;
+  --c-menu-item-hover: rgba(255, 255, 255, 0.06);
+  --c-menu-group-title: #64748b;
+  --c-menu-divider: rgba(255, 255, 255, 0.08);
+  --c-tooltip-bg: rgba(30, 41, 59, 0.85);
+  --c-tooltip-text: #e2e8f0;
+  --c-tooltip-arrow: #1e293b;
+  --c-tooltip-shadow: none;
+  --c-modal-bg: rgba(14, 21, 38, 0.7);
+  --c-modal-border: rgba(255, 255, 255, 0.12);
+  --c-modal-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 30px 60px rgba(0, 0, 0, 0.5);
+  --c-drawer-bg: rgba(10, 16, 30, 0.72);
+  --c-overlay: rgba(2, 6, 15, 0.45);
+  --c-matrix-empty: rgba(255, 255, 255, 0.02);
+  --c-matrix-empty-text: #334155;
+  --c-matrix-hot-text: #fef3c7;
+  --c-matrix-text: #dbeafe;
+}
+.theme-light {
+  --c-body-bg: #eef2f8;
+  --c-body-text: #1e293b;
+  --c-field-bg: rgba(255, 255, 255, 0.7);
+  --c-field-bg-hover: rgba(255, 255, 255, 0.9);
+  --c-field-bg-focus: #ffffff;
+  --c-field-border: rgba(15, 23, 42, 0.12);
+  --c-field-text: #0f172a;
+  --c-placeholder: #94a3b8;
+  --c-approve-bg: #14b8a6;
+  --c-approve-hover: #0d9488;
+  --c-approve-text: #ffffff;
+  --c-glass-btn-bg: rgba(255, 255, 255, 0.72);
+  --c-glass-btn-hover: rgba(255, 255, 255, 0.95);
+  --c-glass-btn-border: rgba(15, 23, 42, 0.1);
+  --c-glass-btn-text: #1e293b;
+  --c-glass-btn-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 1px 2px rgba(15, 23, 42, 0.06);
+  --c-outline-text: #1e293b;
+  --c-outline-border: rgba(15, 23, 42, 0.18);
+  --c-outline-border-hover: rgba(15, 23, 42, 0.3);
+  --c-outline-hover-bg: rgba(255, 255, 255, 0.7);
+  --c-suggest-bg: rgba(255, 255, 255, 0.6);
+  --c-suggest-text: #334155;
+  --c-suggest-border: rgba(15, 23, 42, 0.12);
+  --c-suggest-hover-text: #1d4ed8;
+  --c-pill-bg: #0f172a;
+  --c-pill-text: #ffffff;
+  --c-pill-hover: #1e293b;
+  --c-ghost-text: #475569;
+  --c-ghost-hover-bg: rgba(15, 23, 42, 0.05);
+  --c-ghost-hover-text: #0f172a;
+  --c-ghost-active-bg: rgba(15, 23, 42, 0.08);
+  --c-menu-bg: rgba(255, 255, 255, 0.82);
+  --c-menu-border: rgba(15, 23, 42, 0.1);
+  --c-menu-shadow: 0 20px 40px -8px rgba(30, 41, 80, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --c-menu-item-text: #334155;
+  --c-menu-item-hover: rgba(15, 23, 42, 0.05);
+  --c-menu-group-title: #64748b;
+  --c-menu-divider: rgba(15, 23, 42, 0.08);
+  --c-tooltip-bg: rgba(15, 23, 42, 0.9);
+  --c-tooltip-text: #f8fafc;
+  --c-tooltip-arrow: #0f172a;
+  --c-tooltip-shadow: 0 8px 20px -6px rgba(15, 23, 42, 0.3);
+  --c-modal-bg: rgba(255, 255, 255, 0.82);
+  --c-modal-border: rgba(255, 255, 255, 0.9);
+  --c-modal-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 30px 60px -12px rgba(30, 41, 80, 0.28), 0 0 0 1px rgba(15, 23, 42, 0.06);
+  --c-drawer-bg: rgba(248, 250, 253, 0.86);
+  --c-overlay: rgba(30, 41, 59, 0.22);
+  --c-matrix-empty: rgba(15, 23, 42, 0.03);
+  --c-matrix-empty-text: #cbd5e1;
+  --c-matrix-hot-text: #78350f;
+  --c-matrix-text: #1e3a8a;
+}
+html,
+body,
+#root {
+  height: 100%;
+  background: var(--c-body-bg);
+}
+body {
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+@layer components {
+  .glass {
+    background-color: rgba(16, 24, 42, 0.42);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    backdrop-filter: blur(22px) saturate(150%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 18px 48px -12px rgba(0, 0, 0, 0.45);
+  }
+  .glass-strong {
+    background-color: rgba(9, 14, 26, 0.55);
+    border-color: rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    backdrop-filter: blur(28px) saturate(160%);
+  }
+  .glass-tile {
+    background-color: rgba(255, 255, 255, 0.035);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+}
+.composer-ring {
+  background: linear-gradient(100deg, rgba(96, 165, 250, 0.45), rgba(167, 139, 250, 0.45) 50%, rgba(45, 212, 191, 0.4));
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.composer-ring:hover {
+  background: linear-gradient(100deg, rgba(96, 165, 250, 0.7), rgba(167, 139, 250, 0.7) 50%, rgba(45, 212, 191, 0.6));
+}
+.composer-ring:focus-within {
+  background: linear-gradient(100deg, #60a5fa, #a78bfa 50%, #2dd4bf);
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.16);
+}
+/* ───────── Assistant card: a colored highlight that loops around the border ───────── */
+@property --atlas-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes atlas-orbit {
+  to {
+    --atlas-angle: 360deg;
+  }
+}
+.ai-orbit {
+  position: relative;
+  isolation: isolate;
+}
+.ai-orbit::before,
+.ai-orbit::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(
+    from var(--atlas-angle),
+    transparent 0deg,
+    transparent 230deg,
+    rgba(56, 189, 248, 0.9) 290deg,
+    #a78bfa 325deg,
+    #f472b6 348deg,
+    transparent 360deg
+  );
+  animation: atlas-orbit 7s linear infinite;
+}
+/* Crisp 1px ring */
+.ai-orbit::before {
+  inset: 0;
+  padding: 1px;
+  z-index: 2;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+/* Soft glow that trails the highlight */
+.ai-orbit::after {
+  inset: -2px;
+  z-index: -1;
+  filter: blur(18px);
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+}
+.ai-orbit:hover::after,
+.ai-orbit:focus-within::after {
+  opacity: 0.6;
+}
+.ai-orbit-surface {
+  background-color: #0b1120;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+.theme-light .ai-orbit-surface {
+  background-color: #ffffff;
+  border-color: rgba(15, 23, 42, 0.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ai-orbit::before,
+  .ai-orbit::after {
+    animation: none;
+  }
+}
+/* Native dropdown lists (department, status, owner…) follow the app theme instead of the OS default. */
+select {
+  color-scheme: dark;
+}
+select option,
+select optgroup {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+select option:disabled {
+  color: #64748b;
+}
+.theme-light select {
+  color-scheme: light;
+}
+.theme-light select option,
+.theme-light select optgroup {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* App background: oil-platform image layer + atmospheric overlays.
+   isolation lets the pseudo-element layers sit between the image and the UI. */
+.app-backdrop {
+  isolation: isolate;
+  background-color: #06101f;
+  background-image: url("https://cdn.magicpatterns.com/uploads/u9ukUjz8ocKjrekn5L5otT/ChatGPT_Image_Oct_14,_2026,_11_20_07_AM-2.png");
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+.app-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(55% 45% at 10% 6%, rgba(59, 130, 246, 0.22), transparent 70%),
+    radial-gradient(42% 38% at 92% 14%, rgba(139, 92, 246, 0.16), transparent 70%),
+    radial-gradient(50% 40% at 72% 100%, rgba(45, 212, 191, 0.1), transparent 70%),
+    linear-gradient(180deg, rgba(5, 9, 18, 0.74) 0%, rgba(5, 9, 18, 0.52) 48%, rgba(5, 9, 18, 0.8) 100%);
+}
+/* Analysis overlay on Process Health */
+.analysis-scrim {
+  background-color: rgba(5, 9, 18, 0.28);
+}
+.analysis-panel {
+  background-color: rgba(12, 18, 32, 0.82);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.6);
+}
+.km-node {
+  cursor: pointer;
+  outline: none;
+}
+.km-node:hover text,
+.km-node:focus-visible text {
+  fill: #ffffff;
+}
+.km-node:hover .km-box,
+.km-node:focus-visible .km-box {
+  fill: #37394d;
+  stroke: #b6a6e1;
+}
+.km-node:focus-visible .km-dot {
+  stroke: #ffffff;
+  stroke-width: 2.5px;
+}
+.km-node:focus-visible .km-box {
+  stroke-width: 2px;
+}
+.pm-node {
+  cursor: pointer;
+  outline: none;
+}
+.pm-node:hover .pm-box {
+  stroke: #cbd5e1;
+}
+.pm-node:focus-visible .pm-box {
+  stroke: #ffffff;
+  stroke-width: 2.5px;
+}
+.pm-edge-hit {
+  cursor: pointer;
+  outline: none;
+}
+.pm-edge-hit:focus-visible {
+  stroke: rgba(255, 255, 255, 0.22);
+}
+.pm-label {
+  font-size: 11.5px;
+  font-weight: 500;
+  fill: #e2e8f0;
+}
+.pm-sub {
+  font-size: 10px;
+  fill: #8b97ad;
+}
+.pm-metric {
+  font-size: 10px;
+  fill: #94a3b8;
+  font-variant-numeric: tabular-nums;
+}
+.pm-badge {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.pm-edge-label {
+  font-size: 9.5px;
+  fill: #e2e8f0;
+}
+.num {
+  font-variant-numeric: tabular-nums;
+}
+/* AI Assistant focus: brief highlight on the section the user was taken to */
+@keyframes focus-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0); }
+  15%, 65% { box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.7), 0 0 36px -4px rgba(96, 165, 250, 0.35); }
+  100% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0); }
+}
+@keyframes focus-pulse-light {
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+  15%, 65% { box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.55), 0 0 36px -6px rgba(37, 99, 235, 0.3); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+.focus-highlight {
+  animation: focus-pulse 2.4s ease-out;
+}
+.theme-light .focus-highlight {
+  animation-name: focus-pulse-light;
+}
+@media (prefers-reduced-motion: reduce) {
+  .focus-highlight,
+  .theme-light .focus-highlight {
+    animation: none !important;
+    outline: 2px solid rgba(96, 165, 250, 0.7);
+    outline-offset: 3px;
+  }
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.2) transparent;
+}
+.react-flow__attribution {
+  display: none;
+}
+.react-flow__handle {
+  width: 7px;
+  height: 7px;
+  background: #1e293b;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+/* ═════════════════════════ LIGHT MODE ═════════════════════════
+   Everything below only applies when <html> has .theme-light, so the
+   dark design above is untouched. Utility remaps use exact class-token
+   matching ([class~=…]) or token-prefix matching (start / after a space). */
+
+.theme-light * {
+  scrollbar-color: rgba(100, 116, 139, 0.3) transparent;
+}
+.theme-light .app-backdrop {
+  background-color: #f4f7fb;
+  background-image: url("https://cdn.magicpatterns.com/uploads/hQRm478P5SmiHMb2sF1K87/ChatGPT_Image_Oct_14,_2026,_11_20_06_AM-1.png");
+}
+/* Existing light atmospheric background, kept over the oil-platform layer */
+.theme-light .app-backdrop::before {
+  background-image: url("https://cdn.magicpatterns.com/patterns/generated-images/6a858596-e6a3-41c5-b2cc-a780231e505e.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.55;
+}
+.theme-light .app-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(50% 42% at 8% 4%, rgba(147, 197, 253, 0.35), transparent 70%),
+    radial-gradient(40% 36% at 94% 12%, rgba(196, 181, 253, 0.3), transparent 70%),
+    radial-gradient(48% 40% at 70% 100%, rgba(153, 246, 228, 0.22), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.18) 50%, rgba(244, 247, 251, 0.45) 100%);
+}
+.theme-light .analysis-scrim {
+  background-color: rgba(244, 247, 251, 0.3);
+}
+.theme-light .analysis-panel {
+  background-color: rgba(255, 255, 255, 0.86);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 30px 60px -24px rgba(30, 41, 80, 0.3);
+}
+/* Glass surfaces */
+.theme-light .glass {
+  background-color: rgba(255, 255, 255, 0.58);
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 0 0 1px rgba(15, 23, 42, 0.05), 0 18px 44px -18px rgba(30, 41, 80, 0.22);
+}
+.theme-light .glass-strong {
+  background-color: rgba(255, 255, 255, 0.62);
+  border-color: rgba(15, 23, 42, 0.07);
+}
+.theme-light .glass-tile {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(15, 23, 42, 0.07);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.theme-light .composer-ring {
+  background: linear-gradient(100deg, rgba(59, 130, 246, 0.35), rgba(139, 92, 246, 0.35) 50%, rgba(20, 184, 166, 0.32));
+}
+.theme-light .composer-ring:hover {
+  background: linear-gradient(100deg, rgba(59, 130, 246, 0.55), rgba(139, 92, 246, 0.55) 50%, rgba(20, 184, 166, 0.5));
+}
+.theme-light .composer-ring:focus-within {
+  background: linear-gradient(100deg, #3b82f6, #8b5cf6 50%, #14b8a6);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.14);
+}
+/* ── Text: neutrals ── */
+.theme-light :is([class~="text-white"], [class~="!text-white"], [class~="text-slate-50"], [class^="text-white/"], [class*=" text-white/"], [class^="text-slate-100"], [class*=" text-slate-100"], [class~="!text-slate-100"]) {
+  color: #0f172a !important;
+}
+.theme-light :is([class^="text-slate-200"], [class*=" text-slate-200"], [class~="!text-slate-200"]) {
+  color: #1e293b !important;
+}
+.theme-light :is([class^="text-slate-300"], [class*=" text-slate-300"], [class~="!text-slate-300"]) {
+  color: #334155 !important;
+}
+.theme-light :is([class^="text-slate-400"], [class*=" text-slate-400"], [class~="!text-slate-400"]) {
+  color: #475569 !important;
+}
+.theme-light :is([class^="text-slate-500"], [class*=" text-slate-500"], [class~="!text-slate-500"]) {
+  color: #64748b !important;
+}
+.theme-light :is([class^="text-slate-600"], [class*=" text-slate-600"]) {
+  color: #94a3b8 !important;
+}
+/* white text stays white on solid accent fills */
+.theme-light :is([class~="bg-blue-500"], [class~="bg-blue-600"], [class~="bg-teal-500"], [class~="bg-rose-500"], [class~="bg-violet-500"], [class~="bg-emerald-500"], [class~="bg-amber-500"])[class~="text-white"] {
+  color: #ffffff !important;
+}
+/* ── Text: accents (deepened for contrast on light glass) ── */
+.theme-light :is([class^="text-blue-1"], [class*=" text-blue-1"], [class^="text-blue-2"], [class*=" text-blue-2"], [class^="text-blue-3"], [class*=" text-blue-3"]) { color: #1d4ed8 !important; }
+.theme-light :is([class^="text-blue-4"], [class*=" text-blue-4"]) { color: #2563eb !important; }
+.theme-light :is([class^="text-teal-"], [class*=" text-teal-"]) { color: #0f766e !important; }
+.theme-light :is([class^="text-emerald-"], [class*=" text-emerald-"], [class^="text-green-"], [class*=" text-green-"]) { color: #047857 !important; }
+.theme-light :is([class^="text-amber-"], [class*=" text-amber-"], [class^="text-yellow-"], [class*=" text-yellow-"]) { color: #b45309 !important; }
+.theme-light :is([class^="text-orange-"], [class*=" text-orange-"]) { color: #c2410c !important; }
+.theme-light :is([class^="text-rose-"], [class*=" text-rose-"], [class^="text-red-"], [class*=" text-red-"]) { color: #be123c !important; }
+.theme-light :is([class^="text-violet-"], [class*=" text-violet-"], [class^="text-purple-"], [class*=" text-purple-"], [class^="text-indigo-"], [class*=" text-indigo-"]) { color: #6d28d9 !important; }
+.theme-light :is([class^="text-sky-"], [class*=" text-sky-"], [class^="text-cyan-"], [class*=" text-cyan-"]) { color: #0369a1 !important; }
+/* ── Text: hover / group-hover ── */
+.theme-light :is([class~="hover:text-white"], [class~="hover:!text-white"], [class~="hover:text-slate-100"], [class~="hover:text-slate-200"]):hover { color: #0f172a !important; }
+.theme-light :is([class~="hover:text-slate-300"]):hover { color: #1e293b !important; }
+.theme-light .group:hover :is([class~="group-hover:text-white"], [class~="group-hover:text-slate-200"], [class~="group-hover:text-slate-300"]) { color: #0f172a !important; }
+.theme-light .group:hover [class~="group-hover:text-blue-300"] { color: #1d4ed8 !important; }
+/* ── Backgrounds: white tints → slate tints ── */
+.theme-light :is([class^="bg-white/"], [class*=" bg-white/"], [class*=" !bg-white/"]) {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+.theme-light :is([class~="bg-white/[0.02]"], [class~="bg-white/[0.025]"], [class~="bg-white/[0.03]"], [class~="bg-white/[0.035]"]) {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.theme-light :is([class~="bg-white/[0.07]"], [class~="bg-white/[0.08]"], [class~="bg-white/10"], [class~="bg-white/15"]) {
+  background-color: rgba(15, 23, 42, 0.07) !important;
+}
+/* selected segmented / tab states read as raised white chips */
+.theme-light :is([class~="bg-white/[0.1]"], [class~="bg-white/[0.12]"], [class~="!bg-white/[0.12]"], [class~="bg-white/[0.14]"]) {
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.06);
+}
+.theme-light :is([class^="bg-black/"], [class*=" bg-black/"]) {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+}
+.theme-light :is([class~="hover:bg-white/[0.02]"], [class~="hover:bg-white/[0.03]"], [class~="hover:bg-white/[0.04]"], [class~="hover:bg-white/[0.05]"], [class~="hover:bg-white/[0.06]"], [class~="hover:bg-white/[0.08]"], [class~="hover:!bg-white/[0.08]"], [class~="hover:bg-white/5"], [class~="hover:bg-white/10"]):hover {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+}
+/* Dark hex surfaces used by canvases and floating controls */
+.theme-light :is([class~="bg-[#0C1220]"]) { background-color: rgba(246, 248, 252, 0.85) !important; }
+.theme-light :is([class~="bg-[#0F1729]"], [class~="bg-[#111A2E]"]) { background-color: #ffffff !important; }
+.theme-light :is([class~="bg-[#141D31]"]) { background-color: #f1f5f9 !important; }
+.theme-light :is([class~="bg-[#14213D]"]) { background-color: #eaf1ff !important; }
+.theme-light :is([class~="bg-[#111a2e]/70"]) { background-color: rgba(255, 255, 255, 0.82) !important; }
+.theme-light :is([class~="bg-[#0B1222]/85"], [class~="bg-[#0B1222]/90"], [class~="!bg-[#0B1222]/90"]) { background-color: rgba(255, 255, 255, 0.92) !important; }
+.theme-light [class~="bg-[#050912]/50"] { background-color: rgba(238, 242, 248, 0.25) !important; }
+.theme-light [class~="border-[#0C1220]"] { border-color: #f6f8fc !important; }
+.theme-light [class~="ring-[#080D18]"] { --tw-ring-color: #ffffff !important; }
+.theme-light [class~="bg-slate-300"] { background-color: #94a3b8 !important; }
+.theme-light [class~="bg-slate-400/70"] { background-color: rgba(100, 116, 139, 0.6) !important; }
+/* ── Borders & dividers ── */
+.theme-light :is([class^="border-white/"], [class*=" border-white/"], [class*=" !border-white/"], [class~="border-white"]) {
+  border-color: rgba(15, 23, 42, 0.09) !important;
+}
+.theme-light :is([class~="border-white/15"], [class~="border-white/20"], [class~="!border-white/10"], [class~="border-white/[0.2]"]) {
+  border-color: rgba(15, 23, 42, 0.14) !important;
+}
+.theme-light :is([class~="hover:border-white/20"], [class~="hover:border-white/30"]):hover {
+  border-color: rgba(15, 23, 42, 0.22) !important;
+}
+.theme-light :is([class^="divide-white/"], [class*=" divide-white/"]) > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(15, 23, 42, 0.07) !important;
+}
+.theme-light [class~="ring-white/70"] { --tw-ring-color: rgba(15, 23, 42, 0.55) !important; }
+/* Heavy black drop shadows soften on light */
+.theme-light [class*="shadow-[0_8px_24px_rgba(0,0,0,0.35)]"],
+.theme-light [class*="0_8px_24px_rgba(0,0,0,0.35)"] {
+  box-shadow: 0 8px 20px -6px rgba(30, 41, 80, 0.18) !important;
+}
+.theme-light [class*="0_20px_40px_rgba(0,0,0,0.35)"] {
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.08), 0 16px 32px -10px rgba(30, 41, 80, 0.2) !important;
+}
+/* ── SVG text & strokes drawn with dark-theme literals ── */
+.theme-light :is(text, tspan):is([fill="#FFFFFF" i], [fill="#F1F5F9" i], [fill="#E2E8F0" i], [fill="#e8ebf3" i], [fill="#f3eaff" i], [fill="#ded4ef" i]) { fill: #0f172a; }
+.theme-light :is(text, tspan):is([fill="#CBD5E1" i], [fill="#c7cddd" i]) { fill: #334155; }
+.theme-light :is(text, tspan):is([fill="#94A3B8" i], [fill="#8b95aa" i], [fill="#8d97ac" i]) { fill: #64748b; }
+.theme-light [stroke="rgba(255,255,255,0.07)"],
+.theme-light [stroke="rgba(255,255,255,0.14)"] { stroke: rgba(15, 23, 42, 0.1); }
+.theme-light [fill="rgba(255,255,255,0.05)"] { fill: rgba(255, 255, 255, 0.7); }
+.theme-light [stroke="rgba(148,163,184,0.08)"] { stroke: rgba(100, 116, 139, 0.18); }
+.theme-light [stroke="rgba(148,163,184,0.18)"],
+.theme-light [stroke="rgba(148,163,184,0.16)"],
+.theme-light [stroke="rgba(148,163,184,0.15)"] { stroke: rgba(100, 116, 139, 0.32); }
+.theme-light [stroke="rgba(148,163,184,0.22)"] { stroke: rgba(100, 116, 139, 0.4); }
+.theme-light line[stroke="#CBD5E1" i] { stroke: #64748b; }
+.theme-light [fill="#0B1220" i] { fill: #ffffff; }
+/* Knowledge / process maps */
+.theme-light .km-box:is([fill="#292f3b"], [fill="#2f2c3d"], [fill="#262a37"]) { fill: #ffffff; }
+.theme-light .km-box[fill="#343043"] { fill: #f3eeff; }
+.theme-light .km-node:hover text,
+.theme-light .km-node:focus-visible text { fill: #0f172a; }
+.theme-light .km-node:hover .km-box,
+.theme-light .km-node:focus-visible .km-box { fill: #f5f3ff; stroke: #8b5cf6; }
+.theme-light .km-node:focus-visible .km-dot { stroke: #0f172a; }
+.theme-light .pm-label,
+.theme-light .pm-edge-label { fill: #1e293b; }
+.theme-light .pm-sub { fill: #64748b; }
+.theme-light .pm-metric { fill: #475569; }
+.theme-light .pm-node:hover .pm-box { stroke: #64748b; }
+.theme-light .pm-node:focus-visible .pm-box { stroke: #0f172a; }
+.theme-light .pm-edge-hit:focus-visible { stroke: rgba(15, 23, 42, 0.18); }
+/* Charts (recharts) */
+.theme-light .recharts-default-tooltip {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  color: #1e293b !important;
+  box-shadow: 0 12px 28px -10px rgba(30, 41, 80, 0.25);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.theme-light .recharts-tooltip-label,
+.theme-light .recharts-tooltip-item { color: #1e293b !important; }
+.theme-light .recharts-legend-item-text { color: #475569 !important; }
+.theme-light .recharts-tooltip-cursor { fill: rgba(15, 23, 42, 0.04); }
+/* React Flow */
+.theme-light .react-flow__handle { background: #ffffff; border-color: rgba(100, 116, 139, 0.5); }
+.theme-light .react-flow__minimap { background: rgba(255, 255, 255, 0.75) !important; }
+.theme-light .react-flow__minimap-mask { fill: rgba(238, 242, 248, 0.7); }
+.theme-light .react-flow__minimap-node { fill: #cbd5e1; }
+.theme-light .react-flow__controls-button { background: rgba(255, 255, 255, 0.9); border-color: rgba(15, 23, 42, 0.08); fill: #334155; color: #334155; }
+.theme-light .react-flow__background path,
+.theme-light .react-flow__background circle { stroke: rgba(100, 116, 139, 0.25); fill: rgba(100, 116, 139, 0.3); }
+/* Chakra internals */
+.theme-light .chakra-slider__track { background: rgba(15, 23, 42, 0.1) !important; }
+.theme-light .chakra-popover__arrow { --popper-arrow-bg: rgba(255, 255, 255, 0.95) !important; background: rgba(255, 255, 255, 0.95) !important; }
+.theme-light .chakra-modal__close-btn { color: #475569; }
+/* One-off: Executive report pill on the Process Health panel */
+.theme-light .hero-report-btn {
+  color: #0f172a !important;
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+}
+.theme-light .hero-report-btn:hover { background-color: #ffffff !important; }
+/* Team graph canvas: cheap, compositor-friendly highlight transitions */
+.team-flow .react-flow__edge-path { transition: opacity 0.15s ease, stroke-width 0.15s ease; }
+.team-flow .react-flow__node { contain: layout style; animation: tf-fade-in 0.28s ease both; }
+.team-flow .react-flow__edge { animation: tf-fade-in 0.32s ease both; }
+@keyframes tf-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .team-flow .react-flow__node, .team-flow .react-flow__edge { animation: none; }
+}
+/* Diligence and Analysis */
+.dil-tl-dot { background: #101a2c; }
+.theme-light .dil-tl-dot { background: #ffffff; }
+.theme-light .dil-mini-node { fill: rgba(255, 255, 255, 0.92); }
