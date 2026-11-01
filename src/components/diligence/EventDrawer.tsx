@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Text } from "@chakra-ui/react";
 import { ArrowRightIcon, FileTextIcon, SparklesIcon } from "lucide-react";
 import { SeverityTag } from "../ui/SeverityTag";

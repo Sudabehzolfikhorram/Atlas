@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Box, Button, Flex, Heading, Select, Text } from "@chakra-ui/react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronRightIcon, InfoIcon, PauseIcon, PlayIcon, PlugZapIcon, SkipForwardIcon, SparklesIcon } from "lucide-react";

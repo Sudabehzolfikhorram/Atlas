@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box, Button, Flex, Heading, Select, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { CheckCircle2Icon, CircleIcon, FlaskConicalIcon, PlayIcon, RotateCcwIcon, ShieldCheckIcon, WrenchIcon, XCircleIcon } from "lucide-react";

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
 import { departments } from "../../data/diligence";
 import type { DiligenceArea, Dimension, Finding } from "../../types/diligence";

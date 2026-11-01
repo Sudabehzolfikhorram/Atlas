@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
 import { Navigate, useParams, useSearchParams } from "react-router-dom";
 import { AsBuiltTab } from "../components/diligence/AsBuiltTab";

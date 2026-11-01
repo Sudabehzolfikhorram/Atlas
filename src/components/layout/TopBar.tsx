@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { Avatar, Box, Button, Flex, IconButton, Input, InputGroup, InputLeftElement, Menu, MenuButton, MenuDivider, MenuGroup, MenuItem, MenuList, Text, Tooltip } from "@chakra-ui/react";
+import { useState } from "react";
+import { Avatar, Box, Button, Flex, IconButton, InputGroup, InputLeftElement, Menu, MenuButton, MenuDivider, MenuGroup, MenuItem, MenuList, Text, Tooltip } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { BellIcon, Building2Icon, CalendarIcon, ChevronDownIcon, MenuIcon, SearchIcon } from "lucide-react";
 import { companyContext, currentUser } from "../../data/currentUser";
 import { ThemeMenu } from "./ThemeMenu";
+import { DEMO_LABEL, DEMO_MODE } from "../../config/demo";
 const notifications = [{
   title: "Decision awaiting you",
   body: "Tier-2 approval threshold redesign",
@@ -70,18 +71,25 @@ export function TopBar({
         </MenuList>
       </Menu>
 
-      <Tooltip label="ERP, CMMS (3h delayed), Historian, Email, Chat metadata, Documents, HSE, Procurement, Finance" hasArrow maxW="260px">
-        <Button variant="ghost" onClick={() => navigate("/trust")} className="!hidden xl:!inline-flex">
-          <Flex className="items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-50" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400" />
-            </span>
-            <Text className="text-[12px] text-slate-300">8 of 9 sources live</Text>
-            <Text className="text-[12px] text-slate-500">· synced 4m ago</Text>
-          </Flex>
-        </Button>
-      </Tooltip>
+      {DEMO_MODE ? <Tooltip label="Demo mode: sources, sync status and executions are simulated on sample data." hasArrow maxW="260px">
+          <Button variant="ghost" onClick={() => navigate("/trust")} className="!hidden xl:!inline-flex">
+            <Flex className="items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-amber-400" aria-hidden />
+              <Text className="text-[12px] text-amber-300">{DEMO_LABEL}</Text>
+            </Flex>
+          </Button>
+        </Tooltip> : <Tooltip label="ERP, CMMS (3h delayed), Historian, Email, Chat metadata, Documents, HSE, Procurement, Finance" hasArrow maxW="260px">
+          <Button variant="ghost" onClick={() => navigate("/trust")} className="!hidden xl:!inline-flex">
+            <Flex className="items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-50" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400" />
+              </span>
+              <Text className="text-[12px] text-slate-300">8 of 9 sources live</Text>
+              <Text className="text-[12px] text-slate-500">· synced 4m ago</Text>
+            </Flex>
+          </Button>
+        </Tooltip>}
 
       <ThemeMenu />
 

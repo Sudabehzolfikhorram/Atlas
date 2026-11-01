@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Button, FormControl, FormErrorMessage, FormHelperText, FormLabel, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, Textarea } from "@chakra-ui/react";
 import type { ReviewSubject } from "../../types/diligence";
 export type PendingDecision = {
@@ -12,11 +12,6 @@ interface Props {
   onCancel: () => void;
   onConfirm: (comment: string) => void;
 }
-const subjectLabel: Record<ReviewSubject, string> = {
-  finding: "finding",
-  remediation: "remediation plan",
-  closure: "closure"
-};
 const titles: Record<ReviewSubject, Record<PendingDecision["action"], string>> = {
   finding: {
     accepted: "Accept finding?",

@@ -1,8 +1,8 @@
-import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { CheckCircle2Icon, LockIcon } from "lucide-react";
 import { closureLabel, wfOf, workflowDimensions } from "../../utils/workflow";
 import type { Finding } from "../../types/diligence";
+import { DEMO_LABEL } from "../../config/demo";
 
 /** The four independent status dimensions of a finding, plus its closure state. */
 export function WorkflowStatus({
@@ -46,7 +46,7 @@ export function WorkflowStatus({
     </Box>;
 }
 
-export const DEMO_LABEL = "Sample data — Simulated execution";
+export { DEMO_LABEL };
 
 /** Explicit marker for simulated actions, results and connection states. */
 export function DemoTag() {

@@ -136,10 +136,10 @@ export const findings: Finding[] = [
   policies: ["Master data standard MD-01"],
   owner: "Layla Haddad", ownerRole: "Procurement Manager", reviewer: "Sofia Lindqvist", status: "resolved",
   action: "Merge duplicates and add a duplicate check to the onboarding form.",
-  alternatives: [], nextSteps: ["Monitor new duplicates monthly"],
+  alternatives: [], nextSteps: ["Verification is not available for this finding in the demo — no automated verification test is defined, so the finding stays open and closure is blocked."],
   detection: { method: "Fuzzy-match analysis", at: "2026-08-20T09:00:00Z" },
   identified: "2026-08-20", target: "2026-10-10",
-  timeline: [{ date: "2026-08-20", label: "Detected", actor: "Atlas" }, { date: "2026-09-02", label: "Status → Remediating", actor: "Layla Haddad" }, { date: "2026-10-08", label: "Status → Resolved", actor: "Layla Haddad" }]
+  timeline: [{ date: "2026-08-20", label: "Detected", actor: "Atlas" }, { date: "2026-09-02", label: "Status → Remediating", actor: "Layla Haddad" }, { date: "2026-10-08", label: "Remediation completed — awaiting verification", actor: "Layla Haddad" }]
 },
 {
   id: "F-08", kind: "redflag", area: "data", alsoArea: "process", dimension: "outcome",

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "@chakra-ui/react";
 import type { Finding } from "../../types/diligence";
 interface NodeSpec {

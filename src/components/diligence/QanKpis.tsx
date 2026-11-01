@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "@chakra-ui/react";
 import { StatTile } from "./StatTile";
 import { useDiligence } from "../../contexts/DiligenceContext";
