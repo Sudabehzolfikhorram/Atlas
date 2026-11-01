@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { CheckCircle2Icon, ClipboardCheckIcon, FlagIcon, GaugeIcon, TriangleAlertIcon } from "lucide-react";
 import { diligenceKpis, isActionable } from "../../utils/workflow";

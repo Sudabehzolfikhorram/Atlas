@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Box, Flex, Heading, Select, Text } from "@chakra-ui/react";
 import { InfoIcon, ListChecksIcon } from "lucide-react";
 import { AssuranceRecord } from "./AssuranceRecord";

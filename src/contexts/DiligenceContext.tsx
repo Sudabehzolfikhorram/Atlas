@@ -226,12 +226,11 @@ export function DiligenceProvider({
     if (!clean.owner || !clean.action) return false;
     const base = findingSeed.find((f) => f.id === id);
     if (!base) return false;
-    const prev = {
+    const prev: PlanFields = plans[id] ?? {
       owner: base.owner,
       ownerRole: base.ownerRole,
       action: base.action,
-      target: base.target,
-      ...(plans[id] ?? {})
+      target: base.target
     };
     const changed = (Object.keys(clean) as (keyof PlanFields)[]).filter((k) => clean[k] !== prev[k]);
     if (!changed.length) return true;
