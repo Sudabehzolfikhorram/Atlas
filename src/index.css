@@ -261,7 +261,7 @@ select option:disabled {
 .app-backdrop {
   isolation: isolate;
   background-color: #06101f;
-  background-image: url("https://cdn.magicpatterns.com/uploads/u9ukUjz8ocKjrekn5L5otT/ChatGPT_Image_Oct_14,_2026,_11_20_07_AM-2.png");
+  background-image: url("./assets/backgrounds/platform-dark.png");
   background-size: cover;
   background-position: center bottom;
   background-attachment: fixed;
@@ -399,7 +399,7 @@ select option:disabled {
 }
 .theme-light .app-backdrop {
   background-color: #f4f7fb;
-  background-image: url("https://cdn.magicpatterns.com/uploads/hQRm478P5SmiHMb2sF1K87/ChatGPT_Image_Oct_14,_2026,_11_20_06_AM-1.png");
+  background-image: url("./assets/backgrounds/platform-light.png");
 }
 /* Existing light atmospheric background, kept over the oil-platform layer */
 .theme-light .app-backdrop::before {
